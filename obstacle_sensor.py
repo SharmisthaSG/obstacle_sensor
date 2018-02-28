@@ -32,6 +32,10 @@ flag=1
 GPIO.setwarnings(False)
 
 def distance(trig_value,ech_value):
+    #the sensors send input as 1 if some obstacle is nearby and 0 otherwise
+    #this function returns the distance 
+    #based on time difference between the 0s and 1s sent by the sensors
+    #parameters trig_value and each_value decide which sensor is to be used
     print("Measuring distance")
     GPIO.output(trig_value,False)
     print("Waiting")
